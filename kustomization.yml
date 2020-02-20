@@ -1,7 +1,7 @@
 namePrefix: kustomize-
 
 resources:
-- adservice_deployment.yaml
+- adservice_deplopyment.yaml
 - adservice_svc.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
