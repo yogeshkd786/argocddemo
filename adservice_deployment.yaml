@@ -2,22 +2,22 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   labels:
-    k8s-app: adservice
-  name: adservice
+    k8s-app: argocddemo
+  name: argocddemo
 spec:
   replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      k8s-app: adservice
+      k8s-app: argocddemo
   template:
     metadata:
       labels:
-        k8s-app: adservice
+        k8s-app: argocddemo
     spec:
       containers:
-      - name: adservice
-        image: gcr.io/aliz-tiket-sandbox/k8s-adservice:latest 
+      - name: argocddemo
+        image: gcr.io/aliz-tiket-sandbox/k8s-dockerapp:latest 
         imagePullPolicy: Always
         resources:
           requests:
@@ -27,12 +27,12 @@ spec:
             memory: "128Mi"
             cpu: "500m"
         ports:
-        - containerPort: 80
+        - containerPort: 8080
           protocol: TCP
         livenessProbe:
           httpGet:
             scheme: HTTP
             path: /
-            port: 80
+            port: 8080
           initialDelaySeconds: 30
           timeoutSeconds: 30
