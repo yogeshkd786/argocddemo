@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: argocddemo
-        image: gcr.io/aliz-tiket-sandbox/k8s-dockerapp:latest 
+        image: gcr.io/aliz-tiket-sandbox/k8s-dockerappdemo:latest 
         imagePullPolicy: Always
         resources:
           requests:
